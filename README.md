@@ -1,6 +1,7 @@
-# AngularCiSample
+# Angular CI Sample
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.0.4.
+It uses Travis CI with parallel stages and each one run a specific script inside a Docker container with [Node + Chrome + JRE8](https://hub.docker.com/r/guieb/node-chromium-jre8).
 
 ## Development server
 
