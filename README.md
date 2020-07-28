@@ -1,3 +1,6 @@
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=guiebitt_angular-ci-sample&metric=alert_status)](https://sonarcloud.io/dashboard?id=guiebitt_angular-ci-sample)
+[![Build Status](https://travis-ci.org/guiebitt/angular-ci-sample.svg?branch=master)](https://travis-ci.org/guiebitt/angular-ci-sample)
+
 # Angular CI Sample
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.0.4.
