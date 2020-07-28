@@ -1,0 +1,29 @@
+dist: xenial
+
+jobs:
+  include:
+    - stage: "Pipeline"
+      script:
+      - docker create --name build guieb/node-chromium-jre8 build:ci
+      - docker cp . build:/sources
+      - docker start build -a
+      - docker rm -f build
+      name: "Run build"
+    - script:
+      - docker create --name lint guieb/node-chromium-jre8 lint:ci
+      - docker cp . lint:/sources
+      - docker start lint -a
+      - docker rm -f lint
+      name: "Run lint"
+    - script:
+      - docker create --name test guieb/node-chromium-jre8 test:ci
+      - docker cp . test:/sources
+      - docker start test -a
+      - docker rm -f test
+      name: "Run test"
+    - script:
+      - docker create --name e2e guieb/node-chromium-jre8 e2e:ci
+      - docker cp . e2e:/sources
+      - docker start e2e -a
+      - docker rm -f e2e
+      name: "Run e2e"
